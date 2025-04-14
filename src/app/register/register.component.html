@@ -1,0 +1,83 @@
+<div class="container">
+    <form #formRegister="ngForm">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="form-login">
+                <h2 class="login-header">Đăng kí</h2>
+                <div class="mb-3">
+                    <label for="username" class="form-label">Họ và tên</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="username"
+                        name ="username"
+                        [(ngModel)]="username"
+                        placeholder="Nhập họ và tên"
+                        required
+                    />
+                    <p class="text-danger" *ngIf="username.length < 6 && formRegister.form.touched">can it nhat 6 ki tu</p>
+                </div>
+                <div class="mb-3">
+                    <label for="sdt" class="form-label">Số điện thoại</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="sdt"
+                        name="phone"
+                        [(ngModel)]="phone"
+                        placeholder="Nhập số điện thoại"
+                        required
+                    />
+                    <p class="text-danger" *ngIf="phone.length < 9 && formRegister.form.touched">so dien thoai co it nhat 9 ki tu</p>
+                </div>
+                <div class="mb-3">
+                    <label for="address" class="form-label">Địa chỉ</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="address"
+                        [(ngModel)]="address"
+                        name="address"
+                        placeholder="Nhập địa chỉ"
+                        required
+                    />
+                    <p class="text-danger" *ngIf="address.length < 9 && formRegister.form.touched">Can co it nhat 9 ki tu</p>
+                </div>
+                <div class="mb-3">
+                    <label for="date-of-birth" class="form-label">Ngay sinh</label>
+                    <input
+                        type="date"
+                        class="form-control"
+                        id="date-of-birth"
+                        name="dateBirth"
+                        [(ngModel)]="dateBirth"
+                        (input)="checkAge()"
+                        placeholder="Nhập địa chỉ"
+                        required
+                    />
+                </div>
+                <p class="text-danger" *ngIf="formRegister.controls['dateBirth'].hasError('invalidAge') && formRegister.form.touched">Ban chua du tuoi</p>
+                <div class="mb-3">
+                    <label for="pass" class="form-label">Password</label>
+                    <input
+                        type="password"
+                        class="form-control"
+                        id="pass"
+                        name="password"
+                        [(ngModel)]="password"
+                        placeholder="Nhập ít nhất 6 ký tự"
+                        required
+                    />
+                    <p class="text-danger" *ngIf="password.length < 6 && formRegister.form.touched">Mat khau can it nhat 6 ki tu</p>
+                </div>
+                <button class="btn" (click)="register()">Đăng kí</button>
+                <div class="footerLogin" style="margin-bottom: 20px;">
+                    <a class="nav-login" style="float: right;" [routerLink]="['/loginform']">Bạn đã có tài khoản</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</form>
+</div>
+

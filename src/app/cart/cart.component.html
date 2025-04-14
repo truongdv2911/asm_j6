@@ -1,0 +1,99 @@
+<div class="container mt-5">
+    <h2 class="text-center mb-4">🛒 Checkout</h2>
+  
+    <div class="row" style="margin-bottom: 50px;">
+      <!-- Left Column: User Info Form -->
+      <div class="col-md-5">
+        <div class="card p-4 shadow rounded-4">
+          <h4 class="mb-3">🧍 Thông tin khách hàng</h4>
+          <form (ngSubmit)="handleOrder()" [formGroup]="orderForm" >
+            <div class="mb-3">
+              <label for="name" class="form-label">Họ và tên</label>
+              <input type="text" 
+              formControlName="fullname"
+              class="form-control"
+              id="name"
+              [class.is-invalid]="orderForm.get('fullname')!.invalid && orderForm.get('fullname')!.touched" 
+              name="name" required>
+              <div *ngIf="orderForm.get('fullname')!.invalid && orderForm.get('fullname')!.touched" class="invalid-feedback">
+                Vui lòng nhập họ và tên.
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="phone" class="form-label">Số điện thoại</label>
+              <input type="tel" 
+              formControlName="sdt"
+              class="form-control" 
+              id="phone"
+              [class.is-invalid]="orderForm.get('sdt')!.invalid && orderForm.get('sdt')!.touched" 
+              name="phone" required>
+              <div *ngIf="orderForm.get('sdt')!.invalid && orderForm.get('sdt')!.touched" class="invalid-feedback">
+                Vui lòng nhập số điện thoại.
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="address" class="form-label">Địa chỉ giao hàng</label>
+              <textarea class="form-control" 
+              formControlName="address"
+              id="address" rows="3"
+              [class.is-invalid]="orderForm.get('address')!.invalid && orderForm.get('address')!.touched"
+              name="address" required>
+              </textarea>
+              <div *ngIf="orderForm.get('address')!.invalid && orderForm.get('address')!.touched" class="invalid-feedback">
+                Vui lòng nhập địa chỉ giao hàng.
+              </div>
+            </div>
+            <div class="mb-3">
+                <label for="paymentMethod" class="form-label mr-2">Phương thức thanh toán</label>
+                <select class="form-select" id="paymentMethod" name="paymentMethod"
+                formControlName="pay_method"
+                [class.is-invalid]="orderForm.get('pay_method')!.invalid && orderForm.get('pay_method')!.touched"
+                required>
+                  <option value="" disabled selected>Chọn phương thức</option>
+                  <option value="COD">💵 Cash on Delivery (COD)</option>
+                  <option value="momo">📱 Momo</option>
+                  <option value="zalopay">💳 ZaloPay</option>
+                </select>
+              </div>
+            <div class="d-grid mt-4">
+              <button type="submit" class="btn btn-success btn-lg">
+                🛍️ Đặt Hàng Ngay
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+  
+      <!-- Right Column: Cart Items -->
+      <div class="col-md-7">
+        <div class="card shadow p-4 rounded-4">
+          <h4 class="mb-3">🧾 Your Cart</h4>
+          <table class="table table-hover align-middle text-center">
+            <thead class="table-light">
+              <tr>
+                <th>Image</th>
+                <th>Title</th>
+                <th>Price</th>
+                <th>Qty</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of cartItems">
+                <td><img [src]="item.product.url" alt="product image" class="rounded" width="50"></td>
+                <td>{{ item.product.name }}</td>
+                <td>{{ item.product.price | pipe }}</td>
+                <td>{{ item.quantity }}</td>
+                <td>
+                  <button class="btn btn-sm btn-outline-danger" (click)="removeCartItem(item.product.id)">❌</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="text-end mt-3">
+            <h5>Total: <span class="text-primary">{{ total | pipe }}</span></h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

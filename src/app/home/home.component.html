@@ -1,0 +1,25 @@
+
+  <div class="wrapper-cart">
+    <div class="box row">
+      <div class="imgSlide col-6">
+          <img src="assets/img/vuahanghieu.svg" width="100%"  alt="Anh Vuahanghieu">
+      </div>
+      <div class="slide col-6">
+          <img src="{{srcImg}}" height="100%" width="100%" alt="Slide">
+      </div>
+    </div>
+    <h2>Sản phẩm mới ra mắt</h2>
+    <div class="row tt" style="justify-content: center;">
+      <div class="product" *ngFor="let product of products">
+        <div class="card">
+           <a [routerLink]="['/detail', product.id]">
+            <div class="card-body">
+              <img style="border-radius: 20px;" src="{{product.url}}" width="100%">
+              <p class="card-title">{{product.name}}</p>
+              <p class="card-text">{{ product.price| pipe }}</p>
+            </div>
+         </a> 
+        </div>
+      </div>
+    </div>
+  </div>

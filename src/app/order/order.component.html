@@ -1,0 +1,29 @@
+<div class="container mt-4">
+    <h3 class="mb-4 text-center">Danh sách đơn hàng</h3>
+    <table class="table table-bordered table-hover">
+      <thead class="table-dark">
+        <tr>
+          <th>#</th>
+          <th>Khách hàng</th>
+          <th>SĐT</th>
+          <th>Địa chỉ</th>
+          <th>Ngày đặt</th>
+          <th>Trạng thái</th>
+          <th>Tổng tiền</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of orders; let i = index" (click)="viewOrderDetail(order)">
+          <td>{{ order.id }}</td>
+          <td>{{ order.fullname }}</td>
+          <td>{{ order.sdt }}</td>
+          <td>{{ order.address }}</td>
+          <td>{{ formatDate(order.order_date) }}</td>
+          <td>
+            <span>{{ order.status }}</span>
+          </td>
+          <td>{{ formatCurrency(order.total) }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

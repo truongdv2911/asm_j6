@@ -1,0 +1,31 @@
+.box{
+    width: 75%;
+    background: #fff;
+    margin: auto;
+    padding: 2rem;
+    border-radius: 5px;
+}
+h2{
+    text-align: center;
+    margin-bottom: 1rem;
+}
+.box-form{
+    width: 60%;
+    margin: auto;
+}
+.btn{
+    background-color: pink !important;
+    color: black;
+    border: none;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 220px;
+}
+.btn:hover{
+    background-color: rgb(221, 132, 147) !important;
+    color: rgb(243, 243, 243);
+    border: none;
+    border-radius: 15px;
+}

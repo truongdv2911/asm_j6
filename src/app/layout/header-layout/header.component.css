@@ -1,0 +1,21 @@
+.nav-link:hover {
+    color: #f1c40f !important;
+    transition: 0.3s;
+}
+.navbar {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease-in-out;
+    background-color: rgb(59, 165, 130);
+}
+.popover-list{
+    padding: 10px;
+}
+.dropdown-item {
+    display: block;
+    padding: 8px 15px;
+    text-decoration: none;
+    color: #333;
+  }
+  .dropdown-item:hover {
+    background-color: #f8f9fa;
+  }

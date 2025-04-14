@@ -1,0 +1,24 @@
+.card {
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th {
+    background-color: #f8f9fa;
+  }
+  
+  td, th {
+    padding: 16px;
+    vertical-align: middle;
+  }
+  
+  button.btn-outline-danger {
+    border-radius: 12px;
+    padding: 6px 12px;
+  }

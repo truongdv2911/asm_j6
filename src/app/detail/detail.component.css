@@ -1,0 +1,59 @@
+.product-detail {
+    align-items: center;
+  }
+  
+  .thumbnail img.main-image {
+    max-width: 80%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .so_luong input {
+    max-width: 60px;
+    text-align: center;
+  }
+  
+  .label_dungTich {
+    margin-right: 10px;
+  }
+  .description {
+    background-color: #f8f9fa; /* nền nhẹ xám nhạt */
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+  
+  .description h4 {
+    font-weight: 600;
+    margin-bottom: 15px;
+  }
+  
+  .description p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333;
+    margin: 0;
+    word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: pre-line;
+  }
+  
+  @media (max-width: 767.98px) {
+    .product-detail {
+      flex-direction: column;
+    }
+  
+    .thumbnail img.main-image {
+      max-width: 100%;
+    }
+  
+    .so_luong {
+      justify-content: center;
+    }
+  
+    .dungTich {
+      text-align: center;
+    }
+  }

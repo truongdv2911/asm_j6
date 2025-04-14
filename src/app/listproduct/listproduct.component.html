@@ -1,0 +1,37 @@
+<h2>Sản phẩm HOT</h2>
+
+    <div class="category">
+        <select class="categoryID" [(ngModel)]="categoryID" (change)="onChangeCategory()">
+            <option [value]="0">Tất cả</option>
+            <option *ngFor="let i of categoris" [value]="i.id">
+                {{i.name}}
+            </option>
+        </select>
+    </div>
+
+    <div class="row tt" style="justify-content: center;">
+      <div class="product" *ngFor="let product of products">
+        <div class="card">
+          <a [routerLink]="['/detail', product.id]">
+            <div class="card-body">
+              <img style="border-radius: 20px;" src="{{product.url}}" width="100%">
+              <p class="card-title">{{product.name}}</p>
+              <p class="card-text">{{ product.price| pipe }}</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+     <div class="navPage">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+              <li class="page-item" *ngIf="currentPage>1" ><a class="page-link"  (click)="onChangePage(1)">First</a></li>
+              <li class="page-item" *ngIf="currentPage>1"><a class="page-link"  (click)="onChangePage(currentPage-1)">Previous</a></li>
+              <ng-container *ngFor="let page of visiblePages">
+                <li class="page-item" [ngClass]="{'active': currentPage === page}"><a class="page-link"  (click)="onChangePage(page)">{{page}}</a></li>
+              </ng-container>
+              <li class="page-item" *ngIf="currentPage<totalPages"><a class="page-link"  (click)="onChangePage(currentPage+1)">Next</a></li>
+              <li class="page-item" *ngIf="currentPage<totalPages"><a class="page-link"  (click)="onChangePage(totalPages)">Last</a></li>
+            </ul>
+          </nav>
+     </div>

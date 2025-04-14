@@ -1,0 +1,99 @@
+.wrapper-cart{
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    grid-area: auto;
+    position: static;
+    margin: 12px;
+}
+h2{
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    color: rebeccapurple;
+}
+.card{
+    border-radius: 15px;
+}
+.card:hover{
+    transform: scale(1.1);
+    font-weight: bold;
+    background-color: rgb(248, 244, 244);
+}
+.card > a{
+    text-decoration: none;
+}
+.card-body>p{
+    color: black;
+    font-size: large;
+}
+.box{
+    height: 800px;
+    width: 100%;
+}
+.box> .imgSlide{
+    object-fit: cover;
+    image-rendering: pixelated;
+}
+
+.tt{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    padding: 20px;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 80%;
+}
+.navPage{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.pagination .page-link{
+    color: black; 
+}
+.pagination .page-item.active .page-link{
+    background-color: mediumaquamarine;
+    color: black;
+    border: none;
+}
+.category{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.categoryID {
+    padding: 10px 100px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 500;
+    background-color: #f9f9f9;
+    color: #853434;
+    box-shadow: 0 4px 8px rgba(201, 188, 188, 0.205);
+    transition: all 0.3s ease;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23333' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 12px;
+  }
+  .categoryID:hover {
+    background-color: #fff;
+    border-color: #888;
+  }
+  
+  .categoryID:focus {
+    outline: none;
+    border-color: mediumaquamarine;
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.3);
+  }

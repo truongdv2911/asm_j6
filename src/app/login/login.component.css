@@ -1,0 +1,50 @@
+.container{
+    margin-top: 70px;
+    height: 60vh;
+}
+.form-login{
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 500px;
+    border: 1px solid #ccc;
+    align-items: center;
+    justify-content: center;
+}
+.login-header{
+    text-align: center;
+    margin-bottom: 20px;
+    color: darkcyan;
+}
+.form-control:focus{
+    border: none;
+}
+.form-check{
+    margin: 10px;
+    color: rgb(14, 170, 118);
+}
+.form-check span input[type="checkbox"]:checked{
+    background-color: mediumaquamarine;   
+}
+.nav-login{
+    color: rgb(14, 170, 118);
+}
+.btn{
+    background-color: rgb(173, 199, 247);
+    color: black;
+    border: none;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 140px;
+    padding-left: 70px;
+    padding-right: 70px;
+}
+.btn:hover{
+    background-color: mediumaquamarine !important;
+    color: rgb(241, 234, 234);
+    border: none;
+    border-radius: 15px;
+}
+
+    
